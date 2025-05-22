@@ -6,7 +6,7 @@ image: /images/bhvit.jpg
 categories: research
 author: "Kaijie Yin"
 authors: "Tian Gao, Zhiyuan Zhang, Yu Zhang, Huajun Liu, <strong>Kaijie Yin</strong>, Chengzhong Xu, Hui Kong"
-venue: "CVPR 2025"
+venue: "CVPR"
 arxiv: https://arxiv.org/pdf/2503.02394
 code: https://github.com/IMRL/BHViT
 ---
