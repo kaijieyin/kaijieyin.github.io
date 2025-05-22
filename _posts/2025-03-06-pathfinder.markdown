@@ -2,7 +2,7 @@
 layout: post
 title:  "Pathfinder for Low-altitude Aircraft with Binary Neural Network"
 date:   2025-03-06 00:00:00 +00:00
-image: /images/pathfinder.jpg
+image: /images/pathfinder.png
 categories: research
 author: "Kaijie Yin"
 authors: "<strong>Kaijie Yin*</strong>, Tian Gao*, Hui Kong"
