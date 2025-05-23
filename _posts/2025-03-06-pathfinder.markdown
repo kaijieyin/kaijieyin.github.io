@@ -9,4 +9,5 @@ authors: "<strong>Kaijie Yin*</strong>, Tian Gao*, Hui Kong"
 venue: "arXiv"
 arxiv: https://arxiv.org/pdf/2409.08824
 code: https://github.com/IMRL/Pathfinder
+video: https://www.youtube.com/watch?v=S4_61Q83noM&feature=youtu.be
 ---
