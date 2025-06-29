@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "-"
+title:  "Information-Bottleneck Driven Binary Neural Network for Change Detection"
 date:   2025-03-06 02:00:00 +00:00
 image: /images/bicd.jpg
 categories: research
