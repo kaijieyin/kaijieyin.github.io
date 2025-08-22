@@ -8,4 +8,5 @@ author: "Kaijie Yin"
 authors: "<strong>Kaijie Yin</strong>, Zhiyuan Zhang, Shu Kong, Tian Gao, Chengzhong Xu, Hui Kong"
 venue: "ICCV"
 arxiv: https://arxiv.org/abs/2507.03504
+code: https://github.com/exaids66/BiCD
 ---
