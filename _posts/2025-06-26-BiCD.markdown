@@ -7,6 +7,6 @@ categories: research
 author: "Kaijie Yin"
 authors: "<strong>Kaijie Yin</strong>, Zhiyuan Zhang, Shu Kong, Tian Gao, Chengzhong Xu, Hui Kong"
 venue: "ICCV"
-arxiv: https://arxiv.org/abs/2507.03504
+paper: https://openaccess.thecvf.com/content/ICCV2025/papers/Yin_Information-Bottleneck_Driven_Binary_Neural_Network_for_Change_Detection_ICCV_2025_paper.pdf
 code: https://github.com/exaids66/BiCD
 ---
