@@ -7,7 +7,7 @@ categories: research
 author: "Kaijie Yin"
 authors: "<strong>Kaijie Yin*</strong>, Tian Gao*, Hui Kong"
 venue: "IROS"
-paper: https://ieeexplore.ieee.org/document/11245931
+paper: https://arxiv.org/pdf/2409.08824
 code: https://github.com/IMRL/Pathfinder
 video: https://www.youtube.com/watch?v=S4_61Q83noM&feature=youtu.be
 ---
