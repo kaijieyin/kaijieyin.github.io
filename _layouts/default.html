@@ -1,240 +1,87 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E00L9PT3V9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-E00L9PT3V9');
   </script>
   <title>{{ site.name }}</title>
-
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-
   <meta name="author" content="{{ site.name }}" />
+  <meta name="description" content="Kaijie Yin's academic homepage." />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
-              <h1>
-                YIN KAIJIE(殷 凯捷)
-              </h1>
-              <p>I am a Master student at the <a href="https://www.um.edu.mo/">Faculty of Science and Technology</a> at <a href="https://www.um.edu.mo//">University of Macau</a>, where I work on Efficient AI for Computer Vision and Robot Perception, supervised by <a href="https://www.fst.um.edu.mo/people/huikong/">Professor KONG Hui</a>.
-              </p>
-              <p>
-                From May 2025 to October 2025, I study at <a href="https://www.smu.edu.sg/">Singapore Management University</a> as a visiting student, supervised by <a href="https://zhiyuanzhang.net/">Professor ZHANG Zhiyuan</a>.
-              </p>
-              <p style="text-align:center">
-                <a href="https://github.com/exaids66/">GitHub</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=cWbH3zMAAAAJ">Google Scholar</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/cover_cartoon.jpg">
-            </td>
-          </tr>
-        </table>
+  <main class="site">
+    <header class="profile">
+      <div class="profile__text">
+        <p class="eyebrow">Master Student, University of Macau</p>
+        <h1>Kaijie Yin</h1>
+        <p class="intro">
+          I work on efficient AI for computer vision and robot perception at the
+          <a href="https://www.fst.um.edu.mo/">Faculty of Science and Technology</a>,
+          <a href="https://www.um.edu.mo/">University of Macau</a>, supervised by
+          <a href="https://www.fst.um.edu.mo/people/huikong/">Prof. Hui Kong</a>.
+        </p>
+        <p class="intro">
+          From May to October 2025, I was a visiting student at
+          <a href="https://www.smu.edu.sg/">Singapore Management University</a>,
+          supervised by <a href="https://zhiyuanzhang.net/">Prof. Zhiyuan Zhang</a>.
+        </p>
+        <nav class="links" aria-label="Profile links">
+          <a href="mailto:yin.kaijie@connect.um.edu.mo">Email</a>
+          <a href="https://scholar.google.com/citations?user=cWbH3zMAAAAJ">Google Scholar</a>
+          <a href="https://github.com/exaids66/">GitHub</a>
+        </nav>
+      </div>
+      <img class="profile__photo" alt="Kaijie Yin" src="{{ site.baseurl }}/images/cover_cartoon.jpg">
+    </header>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Research</h2>
-              <p>
-                I'm interested in computer vision, machine learning, optimization and robotics.
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <section class="section">
+      <div class="section__header">
+        <h2>Research</h2>
+        <p>Computer vision, efficient machine learning, optimization, and robotics.</p>
+      </div>
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'research' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              {{post.authors}}
+      <div class="publications">
+        {% for post in site.posts %}
+        {% if post.categories contains 'research' %}
+        <article class="publication">
+          <img class="publication__image" src="{{ site.baseurl }}{{ post.image }}" alt="{{ post.title }}">
+          <div class="publication__body">
+            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="authors">{{ post.authors }}</p>
+            <p class="venue"><em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}</p>
+            <p class="paper-links">
+              {% if post.arxiv %}<a href="{{ post.arxiv }}">Paper</a>{% endif %}
+              {% if post.code %}<a href="{{ post.code }}">Code</a>{% endif %}
+              {% if post.video %}<a href="{{ post.video }}">Video</a>{% endif %}
+              {% if post.poster %}<a href="{{ post.poster }}">Poster</a>{% endif %}
+              {% if post.slides %}<a href="{{ post.slides }}">Slides</a>{% endif %}
+              {% if post.website %}<a href="{{ post.website }}">Website</a>{% endif %}
+            </p>
+            {% if post.excerpt != empty %}
+            <div class="excerpt">{{ post.excerpt }}</div>
+            {% endif %}
+          </div>
+        </article>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </section>
 
-              <br>
-              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
-              <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat != 'research' and cat != 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+    <footer class="footer">
+      <p>Template inspired by <a href="https://jonbarron.info">Jon Barron's website</a>.</p>
+    </footer>
+  </main>
 </body>
 
 </html>
-
