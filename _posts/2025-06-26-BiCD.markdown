@@ -2,7 +2,7 @@
 layout: post
 title:  "Information-Bottleneck Driven Binary Neural Network for Change Detection"
 date:   2025-03-06 02:00:00 +00:00
-image: /images/bicd.jpg
+image: /images/bicd2.png
 categories: research
 author: "Kaijie Yin"
 authors: "<strong>Kaijie Yin</strong>, Zhiyuan Zhang, Shu Kong, Tian Gao, Chengzhong Xu, Hui Kong"
