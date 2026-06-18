@@ -2,9 +2,9 @@
 layout: post
 title:  "Learning 1-Bit LiDAR-based Localization with Auxiliary Objective"
 date:   2026-06-18 02:00:00 +00:00
-image: /images/biloc.png
+image: /images/biloc2.png
 categories: research
 author: "Kaijie Yin"
 authors: "<strong>Kaijie Yin</strong>, Zhiyuan Zhang, Tian Gao, Wentao Zhu, Chengzhong Xu, Hui Kong"
-venue: "European Conference on Computer Vision(ECCV)"
+venue: "European Conference on Computer Vision (ECCV)"
 ---
