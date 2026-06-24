@@ -41,7 +41,8 @@
               </p>
               <p style="text-align:center">
                 <a href="https://github.com/exaids66/">GitHub</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=cWbH3zMAAAAJ">Google Scholar</a>
+                <a href="https://scholar.google.com/citations?user=cWbH3zMAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
+                <a href="mailto:yin.kaijie@connect.um.edu.mo">Email</a>
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
@@ -61,7 +62,7 @@
           </tr>
         </table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
+    
           {% for post in site.posts %}
           {% for cat in post.categories %}
           {% if cat == 'research' %}
@@ -73,7 +74,7 @@
               <h3>{{post.title}}</h3>
               <br>
               {{post.authors}}
-
+    
               <br>
               <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
               <br>
@@ -106,10 +107,10 @@
           {% endfor %}
           {% endfor %}
         </table>
-
+    
         <br>
         <br>
-
+    
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
@@ -120,10 +121,10 @@
             </td>
           </tr>
         </table>
-
+    
         <br>
         <br>
-
+    
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
@@ -140,7 +141,7 @@
         <br>
         <br>
         <br>
-
+    
           {% for post in site.posts %}
           {% for cat in post.categories %}
           {% if cat == 'Intel' %}
@@ -154,7 +155,7 @@
               <em>{{post.categories}} {{post.course}}</em>
               <br>
               {{ post.date | date: "%Y-%m-%d" }}
-
+    
               <br>
               {% if post.website %}
               <a href="{{post.website}}">website</a> /
@@ -197,7 +198,7 @@
         <br>
         <br>
         <br>
-
+    
           {% for post in site.posts %}
           {% for cat in post.categories %}
           {% if cat != 'research' and cat != 'Intel' %}
@@ -211,7 +212,7 @@
               <em>{{post.categories}} {{post.course}}</em>
               <br>
               {{ post.date | date: "%Y-%m-%d" }}
-
+    
               <br>
               {% if post.website %}
               <a href="{{post.website}}">website</a> /
@@ -251,7 +252,7 @@
           {% endfor %}
           {% endfor %}
         </table>
-
+    
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:0px">
