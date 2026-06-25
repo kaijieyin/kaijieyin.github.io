@@ -99,15 +99,19 @@ span.highlight {
   background-color: #ffffd0;
 }
 
-.affiliations-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+.affiliations-table {
+  width: 100%;
+  border: 0px;
+  border-spacing: 16px 10px;
+  border-collapse: separate;
   margin-top: 18px;
 }
 
-.affiliation-item {
+.affiliations-table td {
+  width: 33.333%;
+  padding: 0px;
   text-align: center;
+  vertical-align: middle;
 }
 
 .affiliation-logo-frame {
@@ -126,15 +130,10 @@ span.highlight {
   object-fit: contain;
 }
 
-.affiliation-item h3 {
+.affiliations-table h3 {
   display: block;
   line-height: 1.35;
-}
-
-@media (max-width: 600px) {
-  .affiliations-grid {
-    grid-template-columns: 1fr;
-  }
+  min-height: 38px;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
