@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "High-Fidelity Differential-information Driven Binary Vision Transformer"
+date:   2025-07-02 02:00:00 +00:00
+image: /images/didb.png
+categories: research
+author: "Kaijie Yin"
+authors: "Tian Gao, Zhiyuan Zhang, <strong>Kaijie Yin</strong>, Chengzhong Xu, Hui Kong"
+venue: "Preprint"
+arxiv: https://arxiv.org/abs/2507.02222
+---
