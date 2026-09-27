@@ -1,0 +1,97 @@
+---
+layout: default
+---
+
+<section id="about" class="profile" aria-labelledby="about-title">
+  <figure class="profile-portrait">
+    <img class="profile-photo" src="{{ '/images/cover_air.jpg' | relative_url }}" alt="Kaijie Yin aboard an aircraft" width="1184" height="1184" fetchpriority="high">
+    <figcaption class="profile-caption">
+      <h1>Kaijie Yin <span class="chinese-name" lang="zh">殷凯捷</span></h1>
+      <p>Ph.D. Student &middot; The University of Tokyo</p>
+    </figcaption>
+  </figure>
+  <div class="profile-copy">
+    <h2 id="about-title">About</h2>
+    <p>I am pursuing my Ph.D. degree at the <a href="https://www.mi.t.u-tokyo.ac.jp/en">Machine Intelligence Laboratory (MIL)</a>, <a href="https://www.u-tokyo.ac.jp/en/">The University of Tokyo</a>, under the supervision of Prof. <a href="https://www.mi.t.u-tokyo.ac.jp/harada">Tatsuya Harada</a>. Before that, I received my Master's degree from the <a href="https://skliotsc.um.edu.mo/">State Key Laboratory of Internet of Things for Smart City (SKL-IOTSC)</a> at the <a href="https://www.um.edu.mo/">University of Macau</a>, under the supervision of Prof. <a href="https://sites.google.com/view/huikonglab/members/hui-kong?authuser=0">Hui Kong</a>.</p>
+    <p>I am currently a visiting student at <a href="https://mbzuai.ac.ae/">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</a> from July to October 2026, supervised by Prof. <a href="https://mbzuai.ac.ae/study/faculty/xingxing-zuo/">Xingxing Zuo</a>. Previously, from May to October 2025, I was a visiting student at <a href="https://www.smu.edu.sg/">Singapore Management University</a>, supervised by Prof. <a href="https://zhiyuanzhang.net/">Zhiyuan Zhang</a>.</p>
+    <div class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email: <a class="contact-email" href="mailto:k-yin@mi.t.u-tokyo.ac.jp">k-yin@mi.t.u-tokyo.ac.jp</a></p>
+      <div class="contact-links">
+        <a href="https://scholar.google.com/citations?user=cWbH3zMAAAAJ">[Google Scholar]</a>
+        <a href="https://github.com/exaids66/">[GitHub]</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="section" aria-labelledby="research-title">
+  <h2 id="research-title">Research Interests</h2>
+  <p class="research-copy">My research interests focus on <strong>efficient machine learning</strong> for <strong>computer vision and robotic perception</strong>. I aim to develop efficient models that enable hardware systems to perform real-time perception, interaction, and decision-making in real-world physical environments.</p>
+</section>
+
+<section id="publications" class="section" aria-labelledby="publications-title">
+  <div class="section-heading">
+    <h2 id="publications-title">Publications</h2>
+    <a href="https://scholar.google.com/citations?user=cWbH3zMAAAAJ">[Google Scholar]</a>
+  </div>
+  <div class="publication-list">
+    {% for post in site.posts %}
+      {% if post.categories contains 'research' %}
+        {% include publication.html publication=post %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <p class="publication-note">* Equal contribution.</p>
+</section>
+
+<section id="awards" class="section" aria-labelledby="awards-title">
+  <h2 id="awards-title">Honors and Awards</h2>
+  <ul class="academic-list">
+    <li><strong>Best Student Award (5%)</strong>, University of Macau, 2026</li>
+  </ul>
+</section>
+
+<section id="affiliations" class="section" aria-labelledby="affiliations-title">
+  <h2 id="affiliations-title">Affiliations and Experiences</h2>
+  <ul class="affiliation-list">
+    <li>
+      <a class="affiliation-link" href="https://www.u-tokyo.ac.jp/en/">
+        <span class="affiliation-logo-frame"><img class="affiliation-logo affiliation-logo-utokyo" src="{{ '/images/affiliation-utokyo.jpg' | relative_url }}" alt="" loading="lazy"></span>
+        <span class="affiliation-name">The University of Tokyo</span>
+      </a>
+    </li>
+    <li>
+      <a class="affiliation-link" href="https://www.um.edu.mo/">
+        <span class="affiliation-logo-frame"><img class="affiliation-logo" src="{{ '/images/affiliation-um.png' | relative_url }}" alt="" loading="lazy"></span>
+        <span class="affiliation-name">University of Macau</span>
+      </a>
+    </li>
+    <li>
+      <a class="affiliation-link" href="https://www.smu.edu.sg/">
+        <span class="affiliation-logo-frame"><img class="affiliation-logo affiliation-logo-smu" src="{{ '/images/affiliation-smu.png' | relative_url }}" alt="" loading="lazy"></span>
+        <span class="affiliation-name">Singapore Management University</span>
+      </a>
+    </li>
+    <li>
+      <a class="affiliation-link" href="https://mbzuai.ac.ae/">
+        <span class="affiliation-logo-frame"><img class="affiliation-logo" src="{{ '/images/affiliation-mbzuai.png' | relative_url }}" alt="" loading="lazy"></span>
+        <span class="affiliation-name">MBZUAI</span>
+      </a>
+    </li>
+    <li>
+      <a class="affiliation-link" href="https://www.eitech.edu.cn/">
+        <span class="affiliation-logo-frame"><img class="affiliation-logo affiliation-logo-eit" src="{{ '/images/affiliation-eit.png' | relative_url }}" alt="" loading="lazy"></span>
+        <span class="affiliation-name">Eastern Institute of Technology, Ningbo</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<section id="services" class="section" aria-labelledby="services-title">
+  <h2 id="services-title">Academic Services</h2>
+  <p class="service-label"><strong>Conference Reviewer</strong></p>
+  <ul class="academic-list">
+    <li>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026</li>
+  </ul>
+</section>

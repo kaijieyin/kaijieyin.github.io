@@ -1,0 +1,30 @@
+{% assign publication = include.publication %}
+{% assign paper_url = publication.arxiv | default: publication.paper | default: publication.website | default: publication.url %}
+<article class="publication">
+  <a class="publication-image" href="{{ paper_url | relative_url }}" aria-label="Read {{ publication.title | escape }}">
+    <img src="{{ publication.image | relative_url }}" alt="Research overview for {{ publication.title | escape }}" loading="lazy" decoding="async">
+  </a>
+  <div class="publication-body">
+    {% if include.detail %}
+      <h1 class="publication-title"><a href="{{ paper_url | relative_url }}">{{ publication.title }}</a></h1>
+    {% else %}
+      <h3 class="publication-title"><a href="{{ paper_url | relative_url }}">{{ publication.title }}</a></h3>
+    {% endif %}
+    <p class="publication-authors">{{ publication.authors }}</p>
+    <p class="publication-venue"><em>{{ publication.venue }}</em>, {{ publication.date | date: '%Y' }}</p>
+    <div class="publication-links" aria-label="Publication resources">
+      {% if publication.arxiv %}<a href="{{ publication.arxiv }}">Paper</a>{% endif %}
+      {% if publication.paper %}<a href="{{ publication.paper | relative_url }}">{% if publication.arxiv %}PDF{% else %}Paper{% endif %}</a>{% endif %}
+      {% if publication.code %}<a href="{{ publication.code }}">Code</a>{% endif %}
+      {% if publication.video %}<a href="{{ publication.video }}">Video</a>{% endif %}
+      {% if publication.poster %}<a href="{{ publication.poster | relative_url }}">Poster</a>{% endif %}
+      {% if publication.slides %}<a href="{{ publication.slides | relative_url }}">Slides</a>{% endif %}
+      {% if publication.website %}<a href="{{ publication.website }}">Project page</a>{% endif %}
+      {% if publication.youtube %}<a href="{{ publication.youtube }}">YouTube</a>{% endif %}
+    </div>
+    {% unless include.detail %}
+      {% assign excerpt_text = publication.excerpt | strip_html | strip %}
+      {% if excerpt_text != '' %}<div class="publication-excerpt">{{ publication.excerpt }}</div>{% endif %}
+    {% endunless %}
+  </div>
+</article>

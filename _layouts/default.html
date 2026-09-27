@@ -1,319 +1,50 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.name | escape }}</title>
+  <meta name="author" content="{{ site.name | escape }}">
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title | default: site.name | escape }}">
+  <meta property="og:description" content="{{ site.description | escape }}">
+  <meta property="og:image" content="{{ site.avatar | absolute_url }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E00L9PT3V9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-E00L9PT3V9');
   </script>
-  <title>{{ site.name }}</title>
-
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-
-  <meta name="author" content="{{ site.name }}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
 </head>
-
-<body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
-              <h1>
-                YIN KAIJIE(殷 凯捷)
-              </h1>
-              <p>I am pursuing my PhD degree at the <a href="https://www.mi.t.u-tokyo.ac.jp/en">Machine Intelligence Laboratory (MIL)</a> under the supervision of Prof. <a href="https://www.mi.t.u-tokyo.ac.jp/harada">Tatsuya Harada</a>. Before that, I received my Master's degree from the <a href="https://skliotsc.um.edu.mo/">State Key Laboratory of Internet of Things for Smart City (SKL-IOTSC)</a> at the <a href="https://www.um.edu.mo/">University of Macau</a>, under the supervision of <a href="https://sites.google.com/view/huikonglab/members/hui-kong?authuser=0">Professor KONG Hui</a>.
-              </p>
-              <p>
-                I am currently a visiting student at <a href="https://mbzuai.ac.ae/">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</a> from July to October 2026, supervised by <a href="https://mbzuai.ac.ae/study/faculty/xingxing-zuo/">Professor ZUO Xingxing</a>. Previously, from May to October 2025, I was a visiting student at <a href="https://www.smu.edu.sg/">Singapore Management University</a>, supervised by <a href="https://zhiyuanzhang.net/">Professor ZHANG Zhiyuan</a>.
-              </p>
-              <p style="text-align:center">
-                <a href="https://github.com/exaids66/">GitHub</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=cWbH3zMAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                <a href="mailto:yin.kaijie@connect.um.edu.mo">Email</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/cover_air.jpg">
-            </td>
-          </tr>
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Research</h2>
-              <p>
-                My research interests focus on efficient machine learning for computer vision and robotic perception. I aim to develop efficient models that enable hardware systems to perform real-time perception, interaction, and decision-making in real-world physical environments.
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'research' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              {{post.authors}}
-    
-              <br>
-              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
-              <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-    
-        <br>
-        <br>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Honors and Awards</h2>
-              <ul>
-                <li>2026, Best Student Award (5%), University of Macau</li>
-              </ul>
-            </td>
-          </tr>
-        </table>
-    
-        <br>
-        <br>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Affiliations and Experiences</h2>
-              <table class="affiliations-table">
-                <tr>
-                  <td>
-                    <a class="affiliation-logo-frame" href="https://www.u-tokyo.ac.jp/en/">
-                      <img class="affiliation-logo affiliation-logo-utokyo" src="images/affiliation-utokyo.jpg" alt="The University of Tokyo logo" />
-                    </a>
-                  </td>
-                  <td>
-                    <a class="affiliation-logo-frame" href="https://www.um.edu.mo/">
-                      <img class="affiliation-logo" src="images/affiliation-um.png" alt="University of Macau logo" />
-                    </a>
-                  </td>
-                  <td>
-                    <a class="affiliation-logo-frame" href="https://www.smu.edu.sg/">
-                      <img class="affiliation-logo affiliation-logo-smu" src="images/affiliation-smu.png" alt="Singapore Management University logo" />
-                    </a>
-                  </td>
-                  <td>
-                    <a class="affiliation-logo-frame" href="https://mbzuai.ac.ae/">
-                      <img class="affiliation-logo" src="images/affiliation-mbzuai.png" alt="Mohamed bin Zayed University of Artificial Intelligence logo" />
-                    </a>
-                  </td>
-                  <td>
-                    <a class="affiliation-logo-frame" href="https://www.eitech.edu.cn/">
-                      <img class="affiliation-logo affiliation-logo-eit" src="images/affiliation-eit.png" alt="Eastern Institute of Technology, Ningbo logo" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="affiliation-name">The University of Tokyo</span></td>
-                  <td><span class="affiliation-name">University of Macau</span></td>
-                  <td><span class="affiliation-name">Singapore Management University</span></td>
-                  <td><span class="affiliation-name">MBZUAI</span></td>
-                  <td><span class="affiliation-name">Eastern Institute of Technology, Ningbo</span></td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-
-        <br>
-        <br>
-    
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Services</h2>
-              <p><strong>Reviewer</strong></p>
-              <ul>
-                <li>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026</li>
-              </ul>
-            </td>
-          </tr>
-        </table>
-
-
-        <br>
-        <br>
-        <br>
-    
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-    
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-    
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat != 'research' and cat != 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-    
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-    
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="container site-nav" aria-label="Main navigation">
+      <a class="site-name" href="{{ '/' | relative_url }}">Kaijie Yin <span lang="zh">殷凯捷</span></a>
+      <div class="nav-links">
+        <a href="{{ '/' | relative_url }}#about">About</a>
+        <a href="{{ '/' | relative_url }}#research">Research</a>
+        <a href="{{ '/' | relative_url }}#publications">Publications</a>
+        <a href="{{ '/' | relative_url }}#affiliations">Affiliations</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="container page-content" tabindex="-1">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; {{ site.time | date: '%Y' }} Kaijie Yin</p>
+      <p>Design inspired by <a href="https://zechunliu.com/">Zechun Liu</a> and <a href="https://jonbarron.info/">Jon Barron</a>.</p>
+      <a class="back-to-top" href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
 </body>
-
 </html>

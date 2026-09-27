@@ -1,3 +1,8 @@
 ---
 layout: default
 ---
+<div class="post-page">
+  <a class="post-back" href="{{ '/' | relative_url }}#publications">&larr; All publications</a>
+  {% include publication.html publication=page detail=true %}
+  <div class="post-content">{{ content }}</div>
+</div>
