@@ -12,8 +12,9 @@
   <meta property="og:description" content="{{ site.description | escape }}">
   <meta property="og:image" content="{{ site.avatar | absolute_url }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <!-- Use the browser's default icon, matching zechunliu.com. -->
-  <link rel="icon" href="data:,">
+  <!-- A valid icon at a new URL replaces any cached icon from the old template. -->
+  <link rel="icon" type="image/png" sizes="256x256" href="{{ '/images/favicon-globe.png' | relative_url }}?v=3">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="{{ '/images/favicon-globe.svg' | relative_url }}?v=3">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
   <!-- Google tag (gtag.js) -->
