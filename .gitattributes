@@ -1,0 +1,11 @@
+# Keep text files in LF format on every platform, including Windows.
+* text=auto eol=lf
+
+# Never normalize binary website assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.ico.bak binary
+*.pdf binary
