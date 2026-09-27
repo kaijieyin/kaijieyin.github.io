@@ -66,6 +66,8 @@ code: https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY
 
 将示例内容替换为真实论文信息，并上传对应图片。没有的资源字段直接省略。现有模板使用的可选资源字段包括 `arxiv`、`paper`、`video`、`code`、`poster`、`slides`、`website` 和 `youtube`。
 
+论文图片使用统一的 8:5 展示区域，默认按比例完整显示。如果原图上下有大幅白边，可添加 `image_fit: cover`，让图片放大填满展示区域；使用前请确认裁去的仅是白边，图表和文字仍完整可见。
+
 `authors` 支持 HTML，可用 `<strong>` 突出本人姓名；共同一作等标注按论文实际情况保留。`date` 控制文章排序及显示年份，文件名日期也应与之保持一致。需要正文时，可在 front matter 的结束分隔线后添加 Markdown。
 
 提交前建议检查首页与单篇论文页面、手机宽度的显示效果、所有新增链接，以及图片路径的大小写。GitHub Pages 使用的文件系统区分大小写。

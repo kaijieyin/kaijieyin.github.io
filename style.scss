@@ -54,10 +54,6 @@ h3 { margin: 0; font-size: 17px; }
 .profile { display: grid; grid-template-columns: 264px minmax(0, 1fr); gap: 32px; align-items: start; }
 .profile-portrait { margin: 4px 0 0; }
 .profile-photo { width: 264px; aspect-ratio: 1 / 1; object-fit: cover; }
-.profile-caption { padding-top: 17px; text-align: center; }
-.profile-caption h1 { margin: 0 0 3px; color: #333; font-size: 26px; font-weight: 400; }
-.chinese-name { font-size: 20px; margin-left: 7px; white-space: nowrap; }
-.profile-caption p { margin: 0; font-size: 14px; color: var(--muted); }
 .profile-copy p { line-height: 1.65; }
 .contact { margin-top: 24px; }
 .contact h2 { margin-bottom: 10px; font-size: 24px; }
@@ -72,8 +68,10 @@ h3 { margin: 0; font-size: 17px; }
 .section-heading > a { font-size: 14px; }
 .publication-list { display: grid; gap: 28px; }
 .publication { display: grid; grid-template-columns: 264px minmax(0, 1fr); gap: 32px; align-items: center; }
-.publication-image { display: block; }
-.publication-image img { width: 100%; height: 166px; object-fit: contain; }
+.publication-image { display: block; width: 100%; aspect-ratio: 8 / 5; }
+.publication-image img { width: 100%; height: 100%; object-fit: contain; }
+/* These source images have wide white margins above and below the figure. */
+.publication-image--trimmed img { object-fit: cover; }
 .publication-body { min-width: 0; }
 .publication-title { margin: 0 0 8px; font-size: 17px; line-height: 1.45; font-weight: 700; }
 .publication-authors { margin-bottom: 5px; font-size: 15px; line-height: 1.6; }
@@ -111,10 +109,7 @@ h3 { margin: 0; font-size: 17px; }
   .nav-links a { padding: 3px 0; }
   .page-content { padding-top: 36px; }
   .profile { grid-template-columns: 210px minmax(0, 1fr); gap: 25px; }
-  .profile-caption h1 { font-size: 23px; }
-  .chinese-name { display: block; margin: 4px 0; font-size: 18px; }
   .publication { grid-template-columns: 210px minmax(0, 1fr); gap: 25px; }
-  .publication-image img { height: 150px; }
   .affiliation-list { gap: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
@@ -127,16 +122,12 @@ h3 { margin: 0; font-size: 17px; }
   .profile { grid-template-columns: 1fr; gap: 28px; }
   .profile-portrait { justify-self: center; width: 240px; max-width: 100%; margin-top: 0; }
   .profile-photo { width: 100%; }
-  .profile-caption { padding-top: 14px; }
-  .profile-caption h1 { font-size: 25px; }
-  .chinese-name { display: inline; margin-left: 6px; font-size: 19px; }
   h2 { font-size: 25px; margin-bottom: 15px; }
   .section { margin-top: 34px; }
   .publication-list { gap: 27px; }
   .publication { grid-template-columns: 1fr; gap: 15px; }
   .publication + .publication { border-top: 1px solid var(--rule); padding-top: 25px; }
   .publication-image { max-width: 340px; width: 100%; justify-self: center; }
-  .publication-image img { height: auto; max-height: 210px; }
   .publication-title { font-size: 17px; }
   .affiliation-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 18px; }
   .affiliation-logo-frame { height: 90px; margin-bottom: 12px; }

@@ -3,6 +3,7 @@ layout: post
 title:  "BHViT: Binarized Hybrid Vision Transformer"
 date:   2025-03-06 02:00:00 +00:00
 image: /images/bhvit.jpg
+image_fit: cover
 categories: research
 author: "Kaijie Yin"
 authors: "Tian Gao, Zhiyuan Zhang, Yu Zhang, Huajun Liu, <strong>Kaijie Yin</strong>, Chengzhong Xu, Hui Kong"
